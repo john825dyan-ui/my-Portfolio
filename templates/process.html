@@ -1,0 +1,22 @@
+<section id="process" class="py-24 px-6 lg:px-16 bg-zinc-950">
+    <div class="max-w-6xl mx-auto">
+        <h2 class="section-heading">My Experieces</h2>
+        <p class="text-gray-400 max-w-2xl mt-6 mb-12">{{process.description}}</p>
+
+        <div class="grid md:grid-cols-12 gap-12">
+
+            <div class="md:col-span-12">
+                <div class="timeline-container">
+                    {% for step in process.steps.all %}
+                    <div class="timeline-item" style="--item-index: 1;">
+                        <h3 class="text-xl font-mono font-bold mb-3">{{forloop.counter}}. {{step.title}}</h3>
+                        <p class="text-gray-300 mb-6 ml-6">
+                            {{step.description|safe}}
+                        </p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
